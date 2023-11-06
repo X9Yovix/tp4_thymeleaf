@@ -12,4 +12,9 @@ public class AppController {
         model.addAttribute("app","Thymeleaf");
         return "index";
     }
+
+    @GetMapping("/*")
+    public String notFound(Model model){
+        return "error_404";
+    }
 }
