@@ -3,6 +3,7 @@ package com.tekup.thymeleaf.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,8 +24,15 @@ public class AppController {
 
     @GetMapping("/elements")
     public String elements(Model model) {
-        List<String> list = Arrays.asList("Element 1", "Element 2", "Element 3");
+        List<String> list = Arrays.asList("Element1", "Element2", "Element3");
         model.addAttribute("elements",list);
         return "list";
+    }
+
+    @GetMapping("/elements/{element}")
+    public String detailsAboutElement(@PathVariable String element, Model model) {
+        model.addAttribute("element",element);
+        model.addAttribute("description","description of "+element);
+        return "detail_element";
     }
 }

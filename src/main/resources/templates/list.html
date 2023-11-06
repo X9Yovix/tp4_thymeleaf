@@ -8,8 +8,10 @@
 <h1>List of elements</h1>
 <ul>
     <li th:each="i : ${elements}">
-        <a th:text="${i}"></a>
+        <button><a th:text="${i}" th:href="@{/elements/__${i}__}" ></a></button>
+        <!--<a th:text="${i}" th:href="@{'/elements/'+${i}}"></a>-->
     </li>
 </ul>
+<a th:href="@{'/'}">return to home page</a>
 </body>
 </html>
