@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Not Found</title>
-</head>
-<body>
-<h1>Not Found</h1>
-<p>The requested page was not found</p>
-<a th:href="@{'/'}">return to home page</a>
+<head th:insert="~{fragments/head :: head_frag}"></head>
+<body class="bg-dark min-vh-100 d-flex align-items-center">
+<div class="container m-auto">
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-12">
+                <h1 class="text-light text-center">Not Found</h1>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-12">
+                <p class="text-center text-light">The requested page was not found</p>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-12">
+                <div class="text-center">
+                    <a th:href="@{'/'}" class="text-decoration-none">Return to home page</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div th:insert="~{fragments/footer :: footer_frag}"></div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>App</title>
-</head>
-<body>
-<h1 th:text=" 'Welcome to ' + ${app} + ' App' "></h1>
-<a th:href="@{'/elements'}">view items</a>
+<head th:insert="~{fragments/head :: head_frag}"></head>
+<body class="bg-dark min-vh-100 d-flex align-items-center">
+<div class="container m-auto">
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-12">
+                <h1 th:text=" 'Welcome to ' + ${app} + ' App' " class="text-light text-center"></h1>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-12">
+                <div class="text-center">
+                    <a th:href="@{'/elements'}" class="text-decoration-none">
+                        <button type="button" class="btn btn-outline-success text-uppercase ">
+                            View items
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-12">
+                <div th:insert="~{fragments/footer :: footer_frag}"></div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
